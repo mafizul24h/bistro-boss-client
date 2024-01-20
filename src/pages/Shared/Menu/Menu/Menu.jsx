@@ -9,14 +9,16 @@ import dessertImg from './../../../../assets/menu/dessert-bg.jpeg'
 import pizzaImg from './../../../../assets/menu/pizza-bg.jpg'
 import saladImg from './../../../../assets/menu/salad-bg.jpg'
 import soupImg from './../../../../assets/menu/soup-bg.jpg'
+import drinksImg from './../../../../assets/menu/drinks.jpg'
 
 const Menu = () => {
     const [menus] = useMenu();
-    const offered = menus.filter(menu => menu.category === 'offered')
-    const dessert = menus.filter(menu => menu.category === 'dessert')
-    const pizza = menus.filter(menu => menu.category === 'pizza')
-    const salad = menus.filter(menu => menu.category === 'salad')
-    const soup = menus.filter(menu => menu.category === 'soup')
+    const offered = menus.filter(menu => menu.category === 'offered');
+    const dessert = menus.filter(menu => menu.category === 'dessert');
+    const pizza = menus.filter(menu => menu.category === 'pizza');
+    const salad = menus.filter(menu => menu.category === 'salad');
+    const soup = menus.filter(menu => menu.category === 'soup');
+    const drinks = menus.filter(menu => menu.category === 'drinks');
     return (
         <div>
             <Helmet>
@@ -29,6 +31,7 @@ const Menu = () => {
             <MenuCategory items={pizza} coverImg={pizzaImg} title={'pizza'} />
             <MenuCategory items={salad} coverImg={saladImg} title={'salad'} />
             <MenuCategory items={soup} coverImg={soupImg} title={'soup'} />
+            <MenuCategory items={drinks} coverImg={drinksImg} title={'drinks'} />
         </div>
     );
 };
