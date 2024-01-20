@@ -15,7 +15,6 @@ const Cover = ({ image, title, description }) => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold uppercase">{title}</h1>
                         <p className="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi excepturi sapiente nam. Illum vitae voluptatum porro ullam eius numquam aperiam.</p>
-                        <button className="btn btn-primary">Get Started</button>
                     </div>
                 </div>
             </div>
