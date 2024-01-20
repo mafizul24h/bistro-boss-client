@@ -5,7 +5,7 @@ import './Featured.css'
 
 const Featured = () => {
     return (
-        <div className='feature-image bg-fixed mb-16 text-white'>
+        <div style={{backgroundImage: `url("${featuredImage}")`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}} className='bg-fixed mb-16 text-white'>
             <div className='bg-black bg-opacity-40 pt-8'>
                 <SectionTitle subHeading={'Check it out'} heading={'From Our Menu'} />
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-4 pb-20 px-32'>

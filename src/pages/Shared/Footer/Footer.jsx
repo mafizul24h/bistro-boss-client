@@ -7,8 +7,8 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-neutral text-neutral-content">
                 <aside>
-                    <img className='h-[80px]' src={logo} alt="Bistro Boss" />
-                    <p className='text-xl font-semibold'>Bisto Boss.</p>
+                    <img className='h-[80px]' src={logo} alt="Bistro Boss Resturent" />
+                    <p className='text-xl font-semibold'>Bistro Boss Resturent.</p>
                     <p>Providing reliable tech since 1992</p>
                 </aside>
                 <nav>
@@ -22,7 +22,7 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <aside>
-                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <Link to={'/'}>Bistro Boss</Link></p>
+                    <p>Copyright © {new Date().getFullYear()} - All right reserved by <Link to={'/'}>Bistro Boss Resturent</Link></p>
                 </aside>
             </footer>
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBer = () => {
     const navOptions = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li className='me-2'><NavLink to={'/'} className={({isActive}) => isActive && 'bg-orange-600'}>Home</NavLink></li>
+        <li className='me-2'><NavLink to={'/menu'} className={({isActive}) => isActive && 'bg-orange-600'}>Menu</NavLink></li>
     </>
     return (
         <div className="navbar fixed z-40 bg-opacity-40 bg-black max-w-screen-xl mx-auto text-white">
@@ -17,7 +17,7 @@ const NavBer = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-xl">Bistro Boss</Link>
+                <Link to={'/'} className="btn btn-ghost text-xl">Bistro Boss Resturent</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
