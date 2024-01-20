@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import { Link } from 'react-router-dom';
 
 const ChefRecommen = () => {
     const [recommends, setRecommends] = useState([]);
     console.log(recommends);
     useEffect(() => {
-        fetch('chefRecom.json')
+        fetch('http://localhost:5000/recommends')
             .then(res => res.json())
             .then(data => setRecommends(data))
     }, [])
@@ -22,7 +23,7 @@ const ChefRecommen = () => {
                                 <h2 className="text-2xl font-semibold text-center">{recommend.name}</h2>
                                 <p>{recommend.recipe}</p>
                                 <div className="card-actions justify-center">
-                                    <button className="btn btn-outline border-0 border-b-4 uppercase">Add To Cart</button>
+                                    <Link to='/menu'><button className='btn btn-outline bg-slate-200 border-0 border-b-4 border-orange-600 mt-8'>Add To Cart</button></Link>
                                 </div>
                             </div>
                         </div>

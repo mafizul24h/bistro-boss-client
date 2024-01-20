@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import featuredImage from './../../../assets/home/featured.jpg'
 import './Featured.css'
+import { Link } from 'react-router-dom';
 
 const Featured = () => {
     return (
@@ -14,7 +15,7 @@ const Featured = () => {
                         <h4 className='text-xl'>March 20, 2024</h4>
                         <h4 className='text-xl uppercase'>WHERE CAN I GET SOME?</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptate facere, deserunt dolores maiores quod nobis quas quasi. Eaque repellat recusandae ad laudantium tempore consequatur consequuntur omnis ullam maxime tenetur.</p>
-                        <button className='btn btn-outline border-0 border-b-4'>Read More</button>
+                        <Link to='menu'><button className='btn btn-outline bg-slate-200 border-0 border-b-4 border-orange-600 mt-8'>Read More</button></Link>
                     </div>
                 </div>
             </div>

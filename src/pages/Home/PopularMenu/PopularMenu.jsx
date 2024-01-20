@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import MenuItem from '../../Shared/MenuItem/MenuItem';
 import useMenu from '../../../hooks/useMenu';
+import { Link } from 'react-router-dom';
 
 const PopularMenu = () => {
     const [menus] = useMenu();
@@ -26,7 +27,7 @@ const PopularMenu = () => {
                 }
             </div>
             <div className='text-center'>
-                <button className='btn btn-outline border-0 border-b-4 mt-8'>Popular Menu</button>
+                <Link to={'/menu'}><button className='btn btn-outline bg-slate-200 border-0 border-b-4 border-orange-600 mt-8'>Popular Menu</button></Link>
             </div>
         </div>
     );
