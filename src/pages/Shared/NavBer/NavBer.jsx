@@ -6,6 +6,7 @@ const NavBer = () => {
         <li className='me-2'><NavLink to={'/'} className={({isActive}) => isActive && 'bg-orange-600'}>Home</NavLink></li>
         <li className='me-2'><NavLink to={'/menu'} className={({isActive}) => isActive && 'bg-orange-600'}>Our Menu</NavLink></li>
         <li className='me-2'><NavLink to={'/order/salad'} className={({isActive}) => isActive && 'bg-orange-600'}>Order Food</NavLink></li>
+        <li className='me-2'><NavLink to={'/login'} className={({isActive}) => isActive && 'bg-orange-600'}>Login</NavLink></li>
     </>
     return (
         <div className="navbar fixed z-40 bg-opacity-40 bg-black max-w-screen-xl mx-auto text-white">
