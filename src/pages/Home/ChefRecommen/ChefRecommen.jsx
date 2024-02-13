@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ChefRecommen = () => {
     const [recommends, setRecommends] = useState([]);
-    console.log(recommends);
+    // console.log(recommends);
     useEffect(() => {
         fetch('http://localhost:5000/recommends')
             .then(res => res.json())
