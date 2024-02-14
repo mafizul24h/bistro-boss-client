@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { FaShoppingCart } from "react-icons/fa";
+import useCart from '../../../hooks/useCart';
 
 const NavBer = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [carts] = useCart();
 
     const handleLogout = () => {
         logOut()
@@ -15,6 +18,12 @@ const NavBer = () => {
         <li className='me-2'><NavLink to={'/'} className={({ isActive }) => isActive && 'bg-orange-600'}>Home</NavLink></li>
         <li className='me-2'><NavLink to={'/menu'} className={({ isActive }) => isActive && 'bg-orange-600'}>Our Menu</NavLink></li>
         <li className='me-2'><NavLink to={'/order/salad'} className={({ isActive }) => isActive && 'bg-orange-600'}>Order Food</NavLink></li>
+        <li>
+            <Link to='/'>
+                <FaShoppingCart className='text-xl' />
+                <div className="badge badge-secondary">+<span>{carts?.length || 0}</span></div>
+            </Link>
+        </li>
         {
             user ? <>
                 <li><img title={user.displayName} className='w-[50px] h-[50px] rounded-full' src={user.photoURL} alt={user.displayName} /></li>
