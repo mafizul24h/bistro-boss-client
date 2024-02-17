@@ -26,7 +26,7 @@ const NavBer = () => {
         </li>
         {
             user ? <>
-                <li><img title={user.displayName} className='w-[50px] h-[50px] rounded-full' src={user.photoURL} alt={user.displayName} /></li>
+                <img title={user.displayName} className='w-[40px] h-[40px] rounded-full' src={user.photoURL} alt={user.displayName} />
                 <li><button onClick={handleLogout} className="btn btn-active btn-ghost">Logout</button></li>
             </> : <>
                 <li className='me-2'><NavLink to={'/login'} className={({ isActive }) => isActive && 'bg-orange-600'}>Login</NavLink></li>
