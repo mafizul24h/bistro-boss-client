@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const { createUser, updateUserProfile, logOut, setReload } = useContext(AuthContext);
@@ -24,11 +25,28 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photo)
-                    .then(() => { setReload(true) }).catch(error => console.log(error))
-                logOut().then(() => { }).catch(error => console.log(error));
-                toast(`${data.name} registration successfully please login`)
-                navigate('/login');
-                reset();
+                    .then(() => {
+                        setReload(true)
+                        const saveUser = { name: data.name, email: data.email, photo: data.photo, role: 'user' };
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    logOut().then(() => { }).catch(error => console.log(error));
+                                    toast(`${saveUser.name} registration successfully please login`)
+                                    navigate('/login');
+                                    reset();
+                                }
+                            })
+
+                    }).catch(error => console.log(error))
+
             }).catch(error => {
                 console.log(error.message);
                 toast.warn(error.message);
@@ -91,6 +109,7 @@ const SignUp = () => {
                             </div>
                             <p>Already Have An Account <Link className='text-blue-500 hover:underline' to='/login'>Please Login</Link></p>
                         </form>
+                            <SocialLogin />
                     </div>
                 </div>
             </div>

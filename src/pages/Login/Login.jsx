@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 // import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 
 const Login = () => {
@@ -84,6 +85,7 @@ const Login = () => {
                             </div>
                             <p>Don't Have An Account <Link className='text-blue-500 hover:underline' to='/signup'>Please Register</Link></p>
                         </form>
+                        <SocialLogin />
                     </div>
                 </div>
             </div>
