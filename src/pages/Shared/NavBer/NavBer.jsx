@@ -3,14 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from '../../../hooks/useCart';
-import useUser from '../../../hooks/useUser';
+import useAdmin from '../../../hooks/useAdmin';
 
 const NavBer = () => {
     const { user, logOut } = useContext(AuthContext);
     const [carts] = useCart();
-    const [users] = useUser();
     // console.log(users);
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     const handleLogout = () => {
         logOut()

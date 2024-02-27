@@ -2,14 +2,12 @@ import React, { useContext } from 'react';
 import { FaAlignJustify, FaBars, FaBook, FaCalendarAlt, FaHome, FaListUl, FaShoppingBag, FaShoppingCart, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import useCart from '../hooks/useCart';
-import useUser from '../hooks/useUser';
-import { AuthContext } from '../providers/AuthProvider';
+import useAdmin from '../hooks/useAdmin';
 
 const DashboardLayout = () => {
-    const {user} = useContext(AuthContext);
     const [carts] = useCart();
-    const [users] = useUser();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    console.log(isAdmin);
 
     return (
         <div className="drawer lg:drawer-open">
