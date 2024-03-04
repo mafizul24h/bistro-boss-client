@@ -7,7 +7,7 @@ import useAdmin from '../hooks/useAdmin';
 const DashboardLayout = () => {
     const [carts] = useCart();
     const [isAdmin] = useAdmin();
-    console.log(isAdmin);
+    // console.log(isAdmin);
 
     return (
         <div className="drawer lg:drawer-open">
@@ -27,8 +27,8 @@ const DashboardLayout = () => {
                     {
                         isAdmin ? <>
                             <li className='mb-2'><NavLink to={'/dashboard/'}><FaHome />Admin Home</NavLink></li>
-                            <li className='mb-2'><NavLink to={'/dashboard/'}><FaUtensils />Add Items</NavLink></li>
-                            <li className='mb-2'><NavLink to={'/dashboard/'}><FaListUl />Manage Items</NavLink></li>
+                            <li className='mb-2'><NavLink to={'/dashboard/addItem'}><FaUtensils />Add Items</NavLink></li>
+                            <li className='mb-2'><NavLink to={'/dashboard/manageItems'}><FaListUl />Manage Items</NavLink></li>
                             <li className='mb-2'><NavLink to={'/dashboard/'}><FaBook />Manage Bookings</NavLink></li>
                             <li className='mb-2'><NavLink to={'/dashboard/manageUsers'}><FaUsers />Manage Users</NavLink></li>
                         </> : <>
